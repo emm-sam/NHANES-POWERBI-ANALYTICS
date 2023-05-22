@@ -10,6 +10,8 @@
 ### About NHANES II
 - put a link to the dataset
 - inclusion, exclusion criteria
+- remember to eplain the data columns
+- 
 
 ### Caveats
 - widely used dataset, available on kaggle
@@ -79,6 +81,14 @@ SCREENTSHOT OF GRAPH
 
 - these categories were decided by the research group
 - becuase it is text, we need to set the order of the categories manually
+
+Create a new query and make a table with 2 coloumns, first coloumn called 'Bins' with the same categories as the column 'Income' that we just created, and second column 'Height Order' ranging from 1-15
+> Home -> Transform Data -> Enter Data
+SCREENSHOT?
+
+
+
+
 
 
 
