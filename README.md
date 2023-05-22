@@ -1,1 +1,40 @@
 # NHANES-POWERBI-ANALYTICS
+
+**test**
+> test 
+
+## Project Overview
+
+- this project is about getting to grips with the most commonly used graphs and statisitcal techniques
+- not neccessarily what researchers would be most interested in
+- start using DAX, methods, relationships, visual features
+- interpretation of results
+
+### About NHANES II
+- put a link to the dataset
+- inclusion, exclusion criteria
+
+### Caveats
+- widely used dataset, available on kaggle
+- already clean 
+- alalytics projects already exist for this dataset but I did not look at these beforehand
+- I did use educational material provided by others on youtube, medium, blogs
+- no access to additional graphs 
+
+### Learnings and focus for future 
+
+### credits to others
+- list your resources 
+
+## Set-up 
+- downloaded datasets from kaggle, csv format
+- link
+- Home -> Get Data -> text/csv -> connect -> open -> load
+- only connected 2 out of 7? to keep it working efficiently 
+
+## Page 1 - demographics of sample population
+- count of gender
+- count of income
+- count of race
+- count of age groups 
+- 
