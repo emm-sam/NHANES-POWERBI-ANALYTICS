@@ -33,7 +33,9 @@
 - only connected 2 out of 7? to keep it working efficiently 
 
 ## Cleaning and organising columns
-> Home -> transform data -> remove columns
+- Open Power Query Editor
+> Home -> transform data -> remove columns -> close and apply
+Can also **choose columns** as there were >170 of them and I only wanted 8
 
 ## Page 1 - demographics of sample population
 - count of gender
