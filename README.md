@@ -101,13 +101,14 @@ Create bar chart
 > X-axis income order[income order], legend data[Income], Y-axis count of data[Income]
 
 ### Graph 4 - Count of participants by Age
-Histogram 
+Stacked column chart (Manual histogram) 
 SCREENSHOT
 - as previously, create a new column with custom 'bins' which are ranges to categorise the age variable
 > DAX: **Age Bins = SWITCH ( TRUE(), data[RIDAGEYR] >= 0 && data[RIDAGEYR] < 5, "0-5", ...**
 
 - create a new table with the order of the bins as before and create a relationship between the 2 tables
-
+- create visual 
+  - X-axis age order[age order], Y-axis count of data[Age Bins], Legend data[Age Bins]
 
 Mean, median, mode ?
 
