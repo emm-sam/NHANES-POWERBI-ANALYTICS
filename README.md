@@ -35,7 +35,12 @@
 ## Cleaning and organising columns
 - Open Power Query Editor
 > Home -> transform data -> remove columns -> close and apply
+
 Can also **choose columns** as there were >170 of them and I only wanted 8
+- Merge tables
+> Home -> transform data -> Home -> Combine -> Merge queries (Full Outer) -> Close and apply
+
+- could be any merge option as both datasets have the same number of rows and are complete 
 
 ## Page 1 - demographics of sample population
 - count of gender
