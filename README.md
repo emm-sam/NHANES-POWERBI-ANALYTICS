@@ -5,7 +5,7 @@
 
 ## Project Overview
 
-- this project is about getting to grips with the most commonly used graphs and statisitcal techniques
+- this project is about getting to grips with the most commonly used graphs and statistical techniques
 - not neccessarily what researchers would be most interested in
 - start using DAX, methods, relationships, visual features
 - interpretation of results
@@ -42,11 +42,20 @@ Can also **choose columns** as there were >170 of them and I only wanted 8
 - For the analysis I decided it was easier to merge the 2
 > Home -> transform data -> Home -> Combine -> Merge queries (Full Outer) -> expand -> Close and apply
 
-- could be any merge option as both datasets have the same number of rows and are complete 
+- could be any merge option as both datasets have the same number of rows and are complete
 
 ## Page 1 - demographics of sample population
 - count of gender
 - count of income
 - count of race
 - count of age groups 
-- 
+
+### Graph 1
+- created a new column to change the research codes '1' and '2' to 'male' and 'female'
+- sometimes the data type in the original column will need changing e.g. to a whole number 
+> Home -> New Column 
+
+a window for a DAX expression appears
+> DAX: **Gender = SWITCH ( TRUE (), data[RIAGENDR] = 1, "Male", data[RIAGENDR] = 2, "Female", "other")**
+
+
