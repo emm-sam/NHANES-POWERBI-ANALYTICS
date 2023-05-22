@@ -54,7 +54,7 @@ Justification:
 - count of age groups 
 
 ### Graph 1 - Count of participants by Gender
-
+Stacked Column Chart
 SCREENSHOT OF GRAPH
 - created a new column to change the research codes '1' and '2' to 'male' and 'female' to make the visualisation clearer
 - sometimes the data type in the original column will need changing e.g. to a whole number 
@@ -67,6 +67,7 @@ SCREENSHOT OF GRAPH
 > X-axis 'Gender' Y-axis 'Count of Gender' (drag gender column from Data into both sections
 
 ### Graph 2 - Count of participants by Racial Group
+Stacked Column Chart
 SCREENSHOT OF GRAPH
 - process as previous
 > DAX: **Race = SWITCH ( TRUE(), data[RIDRETH3] = 1, "Mexican American", data[RIDRETH3] = 2, "Other Hispanic", data[RIDRETH3] = 3, "Non-Hispanic White", data[RIDRETH3] = 4, "Non-Hispanic Black", data[RIDRETH3] = 6, "Non-Hispanic Asian", data[RIDRETH3] = 7, "Other Race - Including Multi-Racial", BLANK())**
@@ -82,9 +83,18 @@ SCREENTSHOT OF GRAPH
 - these categories were decided by the research group
 - becuase it is text, we need to set the order of the categories manually
 
-Create a new query and make a table with 2 coloumns, first coloumn called 'Bins' with the same categories as the column 'Income' that we just created, and second column 'Height Order' ranging from 1-15
-> Home -> Transform Data -> Enter Data
+To do this: 
+- Create a new query called 'Income Order' with 2 coloumns. 
+- First coloumn called 'Bins' with the same categories as the column 'Income' that we just created
+- Second column 'income order' ranging from 1-15
+> Home -> Transform Data -> Enter Data -> close and apply
+
+- Create a relationship between the 2 tables based on columns
+- match income order[bins] to data[Income]
+- use Many to one cardinality
+> Model view -> Manage relationships -> New
 SCREENSHOT?
+
 
 
 
