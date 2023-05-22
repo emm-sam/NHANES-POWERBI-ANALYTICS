@@ -1,8 +1,5 @@
 # NHANES-POWERBI-ANALYTICS
 
-**test**
-> test 
-
 ## Project Overview
 
 - this project is about getting to grips with the most commonly used graphs and statistical techniques
@@ -44,6 +41,8 @@ Can also **choose columns** as there were >170 of them and I only wanted 8
 
 - could be any merge option as both datasets have the same number of rows and are complete
 
+- rename the main query to 'data'
+
 ## Page 1 - demographics of sample population
 Justification: 
 
@@ -52,7 +51,7 @@ Justification:
 - count of race
 - count of age groups 
 
-### Graph 1
+### Graph 1 - Count of participants by Gender
 
 SCREENSHOT OF GRAPH
 - created a new column to change the research codes '1' and '2' to 'male' and 'female' to make the visualisation clearer
@@ -64,5 +63,20 @@ SCREENSHOT OF GRAPH
 > Make graph: **Report view -> Vizualisations -> Build Visual -> Stacked column chart**
 
 > X-axis 'Gender' Y-axis 'Count of Gender' (drag gender column from Data into both sections
+
+### Graph 2 - Count of participants by Racial Group
+SCREENSHOT OF GRAPH
+- process as previous
+> DAX: **Race = SWITCH ( TRUE(), data[RIDRETH3] = 1, "Mexican American", data[RIDRETH3] = 2, "Other Hispanic", data[RIDRETH3] = 3, "Non-Hispanic White", data[RIDRETH3] = 4, "Non-Hispanic Black", data[RIDRETH3] = 6, "Non-Hispanic Asian", data[RIDRETH3] = 7, "Other Race - Including Multi-Racial", BLANK())**
+
+- link to the research details
+- note there is no category 5
+
+### Graph 3 - Count of participants by Income (household??)
+SCREENTSHOT OF GRAPH
+- process as previous
+> DAX: **Income = SWITCH ( TRUE(), data[INDHHIN2] = 1, "0-5", data[INDHHIN2] = 2, "5-10", data[INDHHIN2] = 3, "10-15", data[INDHHIN2] = 4, "15-20", data[INDHHIN2] = 5, "20-25", data[INDHHIN2] = 6, "25-35", data[INDHHIN2] = 7, "35-45", data[INDHHIN2] = 8, "45-55", data[INDHHIN2] = 9, "55-65", data[INDHHIN2] = 10, "65-75", data[INDHHIN2] = 12, ">20", data[INDHHIN2] = 13, "<20", data[INDHHIN2] = 14, "75-100", data[INDHHIN2] = 15, ">100", BLANK())**
+
+
 
 ### Making the display readable
