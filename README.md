@@ -11,7 +11,6 @@
 - put a link to the dataset
 - inclusion, exclusion criteria
 - remember to eplain the data columns
-- 
 
 ### Caveats
 - widely used dataset, available on kaggle
@@ -90,18 +89,26 @@ To do this:
 - Second column 'income order' ranging from 1-15
 > Home -> Transform Data -> Enter Data -> close and apply
 
+> Model view -> Manage relationships -> New
+
 - Create a relationship between the 2 tables based on columns
 - match income order[bins] to data[Income]
 - use Many to one cardinality
-> Model view -> Manage relationships -> New
+
 SCREENSHOT?
 
 Create bar chart
 > X-axis income order[income order], legend data[Income], Y-axis count of data[Income]
 
-### Graph 4
-Stacked Column Cart
-LEAVE TILL LATER - could be histogram?
+### Graph 4 - Count of participants by Age
+Histogram 
+SCREENSHOT
+- as previously, create a new column with custom 'bins' which are ranges to categorise the age variable
+> DAX: **Age Bins = SWITCH ( TRUE(), data[RIDAGEYR] >= 0 && data[RIDAGEYR] < 5, "0-5", ...**
+
+- create a new table with the order of the bins as before and create a relationship between the 2 tables
+
+
 Mean, median, mode ?
 
 
