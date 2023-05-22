@@ -38,7 +38,9 @@
 
 Can also **choose columns** as there were >170 of them and I only wanted 8
 - Merge tables
-> Home -> transform data -> Home -> Combine -> Merge queries (Full Outer) -> Close and apply
+- Power BI automatically picked up a relationship between the 2 tables with the column SEQN
+- For the analysis I decided it was easier to merge the 2
+> Home -> transform data -> Home -> Combine -> Merge queries (Full Outer) -> expand -> Close and apply
 
 - could be any merge option as both datasets have the same number of rows and are complete 
 
