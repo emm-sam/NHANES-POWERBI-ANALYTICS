@@ -54,7 +54,7 @@ Justification:
 - count of age groups 
 
 ### Graph 1 - Count of participants by Gender
-Stacked Column Chart
+Stacked Bar Chart
 SCREENSHOT OF GRAPH
 - created a new column to change the research codes '1' and '2' to 'male' and 'female' to make the visualisation clearer
 - sometimes the data type in the original column will need changing e.g. to a whole number 
@@ -76,6 +76,7 @@ SCREENSHOT OF GRAPH
 - note there is no category 5
 
 ### Graph 3 - Count of participants by Income (household??)
+Stacked Bar Chart with Custom Order
 SCREENTSHOT OF GRAPH
 - process as previous
 > DAX: **Income = SWITCH ( TRUE(), data[INDHHIN2] = 1, "0-5", data[INDHHIN2] = 2, "5-10", data[INDHHIN2] = 3, "10-15", data[INDHHIN2] = 4, "15-20", data[INDHHIN2] = 5, "20-25", data[INDHHIN2] = 6, "25-35", data[INDHHIN2] = 7, "35-45", data[INDHHIN2] = 8, "45-55", data[INDHHIN2] = 9, "55-65", data[INDHHIN2] = 10, "65-75", data[INDHHIN2] = 12, ">20", data[INDHHIN2] = 13, "<20", data[INDHHIN2] = 14, "75-100", data[INDHHIN2] = 15, ">100", BLANK())**
@@ -95,6 +96,13 @@ To do this:
 > Model view -> Manage relationships -> New
 SCREENSHOT?
 
+Create bar chart
+> X-axis income order[income order], legend data[Income], Y-axis count of data[Income]
+
+### Graph 4
+Stacked Column Cart
+LEAVE TILL LATER - could be histogram?
+Mean, median, mode ?
 
 
 
