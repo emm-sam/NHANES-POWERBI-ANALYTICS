@@ -29,8 +29,11 @@
 ## Set-up 
 - downloaded datasets from kaggle, csv format
 - link
-- Home -> Get Data -> text/csv -> connect -> open -> load
+> Home -> Get Data -> text/csv -> connect -> open -> load
 - only connected 2 out of 7? to keep it working efficiently 
+
+## Cleaning and organising columns
+> Home -> transform data -> remove columns
 
 ## Page 1 - demographics of sample population
 - count of gender
