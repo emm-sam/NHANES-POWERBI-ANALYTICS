@@ -122,11 +122,8 @@ SCREENSHOT
 
 > IQ Range Age = data[75th Percentile Age] - data[25th Percentile Age]
 
-I did a quick visual check of the histogram to see if the values were reasonable. 
-
-
-
-
+I did a quick visual check of the histogram to see if the values were reasonable.
+I would make a box and whisker diagram with these measures to assess the skewness/symmetry of the data. 
 
 
 
