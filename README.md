@@ -130,9 +130,11 @@ From the histogram I would expect it to show a small positive skew.
 
 
 ### Making the display readable
-Some things that I changed to make the visualisation more aesthetically pleasing and easy to read 
+Some things that I changed to make the visualisation more aesthetically pleasing and easy to interpret.
+These can mostly be found in the 'Format your Visual' section of the 'Visualizations' pane 
 - Tidied up the titles and axis labels (make central, simplify, include units where needed)
 - Changed the colour theme so they all match 
+- Change individual bar / column colours
 - Added data labels 
-- Hide the axis for any ordered bar chart 
+- Hide the axis for any ordered bar chart as it is meaningless 
 - Tooltips are on 
