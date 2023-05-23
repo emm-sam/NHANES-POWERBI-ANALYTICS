@@ -123,15 +123,18 @@ SCREENSHOT
 
 > IQ Range Age = data[75th Percentile Age] - data[25th Percentile Age]
 
-Outliers could be assessed with (75th Percentile + 1.5 * IQR), or (25th Percentile - 1.5 * IQR)
-I did a quick visual check of the histogram to see if the values were reasonable.
-I would make a box and whisker diagram with these measures to assess the skewness/symmetry of the data.
-From the histogram I would expect it to show a small positive skew. 
+Comments:
+- Outliers could be assessed with (75th Percentile + 1.5 * IQR), or (25th Percentile - 1.5 * IQR)
+- I did a quick visual check of the histogram to see if the values were reasonable.
+- I would make a box and whisker diagram with these measures to assess the skewness/symmetry of the data.
+- From the histogram I would expect it to show a small positive skew. 
 
 
 ### Making the display readable
 Some things that I changed to make the visualisation more aesthetically pleasing and easy to interpret.
-These can mostly be found in the 'Format your Visual' section of the 'Visualizations' pane 
+
+These can mostly be found in the 'Format your Visual' section of the 'Visualizations' pane
+
 - Tidied up the titles and axis labels (make central, simplify, include units where needed)
 - Changed the colour theme so they all match 
 - Change individual bar / column colours
