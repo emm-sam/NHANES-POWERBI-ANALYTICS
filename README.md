@@ -122,6 +122,8 @@ SCREENSHOT
 
 > IQ Range Age = data[75th Percentile Age] - data[25th Percentile Age]
 
+Outliers could be assessed with (75th Percentile + 1.5 * IQR), or (25th Percentile - 1.5 * IQR)
+
 I did a quick visual check of the histogram to see if the values were reasonable.
 I would make a box and whisker diagram with these measures to assess the skewness/symmetry of the data. 
 
