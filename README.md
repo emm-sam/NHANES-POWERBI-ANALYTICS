@@ -161,7 +161,9 @@ SCREENSHOT
 - I repeated this for Height Adult (not pregnant)
 
 - Make scatter graph with height on x-axis and weight on y-axis
+- Change to 'Don't Summarize' on the axis drop down menu
 - plot a trend line 
+> **Add further analyses to your visual -> Trend line -> On** 
 
 ### Correlation co-efficient for Graph 1
 - this is a really long complicated DAX formula, but Power BI has a built in quick measure to calculate it. 
