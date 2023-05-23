@@ -167,7 +167,11 @@ SCREENSHOT
 
 ### Correlation co-efficient for Graph 1
 - this is a really long complicated DAX formula, but Power BI has a built in quick measure to calculate it. 
-> 
+> Home -> Quick measure -> correlation coefficient 
+
+### Graph 2 - Scatter graph with rough outliers removed 
+- removed those from the sample with a BMI of > 30
+- correlation improves 
 
 
 
