@@ -81,12 +81,13 @@ SCREENTSHOT OF GRAPH
 > DAX: **Income = SWITCH ( TRUE(), data[INDHHIN2] = 1, "0-5", data[INDHHIN2] = 2, "5-10", data[INDHHIN2] = 3, "10-15", data[INDHHIN2] = 4, "15-20", data[INDHHIN2] = 5, "20-25", data[INDHHIN2] = 6, "25-35", data[INDHHIN2] = 7, "35-45", data[INDHHIN2] = 8, "45-55", data[INDHHIN2] = 9, "55-65", data[INDHHIN2] = 10, "65-75", data[INDHHIN2] = 12, ">20", data[INDHHIN2] = 13, "<20", data[INDHHIN2] = 14, "75-100", data[INDHHIN2] = 15, ">100", BLANK())**
 
 - these categories were decided by the research group
-- becuase it is text, we need to set the order of the categories manually
+- note the categories <20 and >20, I decided to order these between 15-20 and 20-25 
+- because it is text, we need to set the order of the categories manually
 
-To do this: 
-- Create a new query called 'Income Order' with 2 coloumns. 
+To set a manual order for bars: 
+- Create a new query (table) called 'Income Order' with 2 coloumns. 
 - First coloumn called 'Bins' with the same categories as the column 'Income' that we just created
-- Second column 'income order' ranging from 1-15
+- Second column 'income order' ranging from 1-15 in the order that is needed 
 > Home -> Transform Data -> Enter Data -> close and apply
 
 > Model view -> Manage relationships -> New
@@ -123,10 +124,15 @@ SCREENSHOT
 > IQ Range Age = data[75th Percentile Age] - data[25th Percentile Age]
 
 Outliers could be assessed with (75th Percentile + 1.5 * IQR), or (25th Percentile - 1.5 * IQR)
-
 I did a quick visual check of the histogram to see if the values were reasonable.
-I would make a box and whisker diagram with these measures to assess the skewness/symmetry of the data. 
-
+I would make a box and whisker diagram with these measures to assess the skewness/symmetry of the data.
+From the histogram I would expect it to show a small positive skew. 
 
 
 ### Making the display readable
+Some things that I changed to make the visualisation more aesthetically pleasing and easy to read 
+- Tidied up the titles and axis labels (make central, simplify, include units where needed)
+- Changed the colour theme so they all match 
+- Added data labels 
+- Hide the axis for any ordered bar chart 
+- Tooltips are on 
