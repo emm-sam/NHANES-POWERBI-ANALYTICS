@@ -110,7 +110,15 @@ SCREENSHOT
 - create visual 
   - X-axis age order[age order], Y-axis count of data[Age Bins], Legend data[Age Bins]
 
-Mean, median, mode ?
+### Cards - Mean, Median, Interquartile Range of Ages
+- Made using measures with DAX
+> Mean Age = AVERAGE(data[RIDAGEYR])
+> Median Age = MEDIAN(data[RIDAGEYR])
+> 75th Percentile Age = PERCENTILE.INC(data[RIDAGEYR], 0.75)
+> 25th Percentile Age = PERCENTILE.INC(data[RIDAGEYR], 0.25)
+> IQ Range Age = data[75th Percentile Age] - data[25th Percentile Age]
+
+I did a quick visual check of the histogram to see if the values were reasonable. 
 
 
 
