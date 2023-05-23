@@ -141,3 +141,33 @@ These can mostly be found in the 'Format your Visual' section of the 'Visualizat
 - Added data labels 
 - Hide the axis for any ordered bar chart as it is meaningless 
 - Tooltips are on 
+
+
+## Page 2
+SCREENSHOT
+This page is exploring the relationships between examination variables (age and height, weight and height).
+
+I chose these because there should be a positive correlation between height and weight and height is usually normally distributed in a population. 
+
+
+### Graph 1 - Scatter Graph of height vs weight 
+SCREENSHOT
+
+
+- To start I created new columns to filter out those aged under 16 (as not fully grown) and pregnant women (which would raise their weight). 
+> Create New Column DAX: **Weight Adult (not pregnant) = IF(data[RIDAGEYR] > 16 && data[RIDEXPRG] <> 1, data[examination.BMXWT], BLANK())**
+
+- This means that if the conditions are met, the column will fill in with the participant's weight, if not it will be blank.
+- I repeated this for Height Adult (not pregnant)
+
+- Make scatter graph with height on x-axis and weight on y-axis
+- plot a trend line 
+
+### Correlation co-efficient for Graph 1
+- this is a really long complicated DAX formula, but Power BI has a built in quick measure to calculate it. 
+> 
+
+
+
+
+
