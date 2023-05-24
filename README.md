@@ -186,6 +186,10 @@ SCREENSHOT
     - line y-axis as average of adult normal distribution for height
     - legend are height bins
 
+Calculated the Z-score = (value - mean) / standard deviation
+> Z-score Adult Height = (data[Height Adult] - 167.11) / 10.16
 
+- I then removed any value with a z-score of >3 and < -3
+- there were 5 adult outliers 
 
 
