@@ -20,6 +20,10 @@
 - no access to additional graphs 
 
 ### Learnings and focus for future 
+- how to custom order a legend
+- using parameters instead of filters
+- time based graphs and trends
+- running speed / efficiency 
 
 ### credits to others
 - list your resources 
@@ -186,10 +190,17 @@ SCREENSHOT
     - line y-axis as average of adult normal distribution for height
     - legend are height bins
 
+### Graph 4 
+SCREENSHOT
 Calculated the Z-score = (value - mean) / standard deviation
 > Z-score Adult Height = (data[Height Adult] - 167.11) / 10.16
 
 - I then removed any value with a z-score of >3 and < -3
 - there were 5 adult outliers 
 
+histogram of zscores 
+- almost 2 peaks for male and female
+- would separate these 
+
+### Graph 5 - box and whisker 
 
