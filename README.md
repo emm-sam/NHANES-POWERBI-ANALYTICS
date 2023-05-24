@@ -190,6 +190,8 @@ SCREENSHOT
     - line y-axis as average of adult normal distribution for height
     - legend are height bins
 
+becuase normal distribution is hard coded - does not change with filters
+
 ### Graph 4 
 SCREENSHOT
 Calculated the Z-score = (value - mean) / standard deviation
