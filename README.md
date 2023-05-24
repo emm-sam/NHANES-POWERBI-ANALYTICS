@@ -176,7 +176,9 @@ SCREENSHOT
 ### Graph 3 - Histogram of adult height, normal distribution
 - create column to sort height into bins (increments of 5cm)
 - set the order of the height bins by creating a new query and creating a relationship between the 2
-- use measures to calculate mean and standard devation for adult height (AVERAGE()) (STDEV.P())
+- use measures to calculate mean and standard devation for adult height (AVERAGE()) (STDEV.P()) with FILTER function for > 16 years old
+> **Mean Height Adult = CALCULATE(AVERAGE(data[examination.BMXHT]), FILTER(data, data[RIDAGEYR] > 16))
+
 - create a new column with calculated normal distribution (NORM.DIST())
 - plot a line and stacked column chart: 
     - x-axis height bin order
