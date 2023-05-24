@@ -74,7 +74,7 @@ SCREENSHOT OF GRAPH
 - link to the research details
 - note there is no category 5
 
-### Graph 3 - Count of participants by Income (household??)
+### Graph 3 - Count of participants by Income (annual household income)
 Stacked Bar Chart with Custom Order
 SCREENTSHOT OF GRAPH
 - process as previous
@@ -171,8 +171,18 @@ SCREENSHOT
 
 ### Graph 2 - Scatter graph with rough outliers removed 
 - removed those from the sample with a BMI of > 30
-- correlation improves 
+- correlation coefficient improves .. suspiciously high 
 
+### Graph 3 - Histogram of adult height, normal distribution
+- create column to sort height into bins (increments of 5cm)
+- set the order of the height bins by creating a new query and creating a relationship between the 2
+- use measures to calculate mean and standard devation for adult height (AVERAGE()) (STDEV.P())
+- create a new column with calculated normal distribution (NORM.DIST())
+- plot a line and stacked column chart: 
+    - x-axis height bin order
+    - y-axis count of adult height
+    - line y-axis as average of adult normal distribution for height
+    - legend are height bins
 
 
 
