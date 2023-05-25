@@ -262,27 +262,39 @@ What and How:
     - line y-axis as **average** of adult normal distribution for height
     - legend is height bins
 
-Note:
-- [Normal Distribution](https://community.fabric.microsoft.com/t5/Desktop/Normal-Distribution/td-p/1729978)
+Notes:
+- [Normal Distribution in Power BI](https://community.fabric.microsoft.com/t5/Desktop/Normal-Distribution/td-p/1729978)
 - We can see roughtly that the sample population height is normally distributed (as expected), however the peaks are not totally in line 
-- This may be ebcause the median is lower than the mean?? 
+- This may be because the median is lower than the mean?? 
 - Because the mean and standard deviation for normal distribution are hard coded - it does not change with gender filters
-- Though this allows us to compare the gender distribution compared to the whole population  
+- Though this allows us to compare the gender distribution with the whole population  
 
 ![height female](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/f760c42e-8771-4cf1-b8e7-4076cbb5ad92)
 
-- When filtered for the female sample, we can see that there is still a normal distribution, centered around a lower mean height than the whole population 
+- When filtered for the female sample, we can see that there is still a normal distribution centered around a lower mean height than the whole population mean height
 
-### Graph 4 
-SCREENSHOT
-Calculated the Z-score = (value - mean) / standard deviation
+### GRAPH 4 - Z-SCORE DISTRIBUTION
+Stacked Column Charts (Histogram)
+?explain z-score?
+![zscore all](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/26e2c6e9-2396-4dd9-a8fe-bc99ae796cb5)
+
+Filter: Z-scores for females
+![zscore female](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/991b029f-586e-4d06-ae61-2c6600ac2c38)
+
+Filter: Z-scores for males
+![zscore male](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/0f6c5f6e-44fc-416e-a149-a1213ab38440)
+
+What + How:
+- Create a new column and calculate the Z-score for each height = (value - mean) / standard deviation
 > Z-score Adult Height = (data[Height Adult] - 167.11) / 10.16
 
-- I then removed any value with a z-score of >3 and < -3
-- there were 5 adult outliers 
+- Grouped these into intervals of 0.2 (z-scores)
 
-histogram of zscores 
-- almost 2 peaks for male and female
+- I then removed any value with a z-score of > 3 and < -3
+- there were only **5** adult outliers 
+
+Notes: 
+- for the whole study population, again there is roughly a normal distribution here,  almost 2 peaks for male and female
 - would separate these 
 
 ### Graph 5 - box and whisker 
