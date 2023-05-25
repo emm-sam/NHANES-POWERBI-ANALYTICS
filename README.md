@@ -60,7 +60,10 @@ Justification:
 
 ### Graph 1 - Count of participants by Gender
 Stacked Bar Chart
-SCREENSHOT OF GRAPH
+
+
+![Gender graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/28a07d77-17eb-4789-a4d0-6045b79d9097)
+
 - created a new column to change the research codes '1' and '2' to 'male' and 'female' to make the visualisation clearer
 - sometimes the data type in the original column will need changing e.g. to a whole number 
 > Create column: **Home -> New Column**      (a window for a DAX expression appears)
@@ -73,7 +76,10 @@ SCREENSHOT OF GRAPH
 
 ### Graph 2 - Count of participants by Racial Group
 Stacked Column Chart
-SCREENSHOT OF GRAPH
+
+
+![Race graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/a29625d9-fd78-49f2-a710-57b83e934be5)
+
 - process as previous
 > DAX: **Race = SWITCH ( TRUE(), data[RIDRETH3] = 1, "Mexican American", data[RIDRETH3] = 2, "Other Hispanic", data[RIDRETH3] = 3, "Non-Hispanic White", data[RIDRETH3] = 4, "Non-Hispanic Black", data[RIDRETH3] = 6, "Non-Hispanic Asian", data[RIDRETH3] = 7, "Other Race - Including Multi-Racial", BLANK())**
 
@@ -82,7 +88,9 @@ SCREENSHOT OF GRAPH
 
 ### Graph 3 - Count of participants by Income (annual household income)
 Stacked Bar Chart with Custom Order
-SCREENTSHOT OF GRAPH
+
+![Income graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/07144fb1-b370-41e7-97ab-6ea9f90286b0)
+
 - process as previous
 > DAX: **Income = SWITCH ( TRUE(), data[INDHHIN2] = 1, "0-5", data[INDHHIN2] = 2, "5-10", data[INDHHIN2] = 3, "10-15", data[INDHHIN2] = 4, "15-20", data[INDHHIN2] = 5, "20-25", data[INDHHIN2] = 6, "25-35", data[INDHHIN2] = 7, "35-45", data[INDHHIN2] = 8, "45-55", data[INDHHIN2] = 9, "55-65", data[INDHHIN2] = 10, "65-75", data[INDHHIN2] = 12, ">20", data[INDHHIN2] = 13, "<20", data[INDHHIN2] = 14, "75-100", data[INDHHIN2] = 15, ">100", BLANK())**
 
@@ -91,10 +99,12 @@ SCREENTSHOT OF GRAPH
 - because it is text, we need to set the order of the categories manually
 
 To set a manual order for bars: 
-- Create a new query (table) called 'Income Order' with 2 coloumns. 
-- First coloumn called 'Bins' with the same categories as the column 'Income' that we just created
+- Create a new query (table) called 'Income Order' with 2 coloumns
+- First coloumn called 'bins' with the same categories as the column 'Income' that we just created
 - Second column 'income order' ranging from 1-15 in the order that is needed 
 > Home -> Transform Data -> Enter Data -> close and apply
+
+SCREENSHOT ORDER SETTING QUERY 
 
 > Model view -> Manage relationships -> New
 
@@ -102,20 +112,22 @@ To set a manual order for bars:
 - match income order[bins] to data[Income]
 - use Many to one cardinality
 
-SCREENSHOT?
+![Manage relationships](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/95dc3f43-f7eb-4123-af8c-4bee3478201e)
 
 Create bar chart
-> X-axis income order[income order], legend data[Income], Y-axis count of data[Income]
+> X-axis - income order[income order], legend - data[Income], Y-axis - count of data[Income]
 
 ### Graph 4 - Count of participants by Age
 Stacked column chart (Manual histogram) 
-SCREENSHOT
+
+![Age graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/ffe902ac-d70f-4b39-80f7-b576cce587f5)
+
 - as previously, create a new column with custom 'bins' which are ranges to categorise the age variable
 > DAX: **Age Bins = SWITCH ( TRUE(), data[RIDAGEYR] >= 0 && data[RIDAGEYR] < 5, "0-5", ...**
 
 - create a new table with the order of the bins as before and create a relationship between the 2 tables
 - create visual 
-  - X-axis age order[age order], Y-axis count of data[Age Bins], Legend data[Age Bins]
+  - X-axis - age order[age order], Y-axis - count of data[Age Bins], Legend - data[Age Bins]
 
 ### Cards - Mean, Median, Interquartile Range of Ages
 - Made using measures with DAX
@@ -130,7 +142,7 @@ SCREENSHOT
 > IQ Range Age = data[75th Percentile Age] - data[25th Percentile Age]
 
 Comments:
-- Outliers could be assessed with (75th Percentile + 1.5 * IQR), or (25th Percentile - 1.5 * IQR)
+- Outliers could be determined by (75th Percentile + (1.5 * IQR)) and (25th Percentile - (1.5 * IQR))
 - I did a quick visual check of the histogram to see if the values were reasonable.
 - I would make a box and whisker diagram with these measures to assess the skewness/symmetry of the data.
 - From the histogram I would expect it to show a small positive skew. 
@@ -147,6 +159,10 @@ These can mostly be found in the 'Format your Visual' section of the 'Visualizat
 - Added data labels 
 - Hide the axis for any ordered bar chart as it is meaningless 
 - Tooltips are on 
+
+![Tooltip example](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/bd7c54f0-b122-40df-8253-d6900e05eda6)
+
+![Example of filtering](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/4144aff1-9700-4fb0-b98f-2c23b14e00c9)
 
 
 ## Page 2
