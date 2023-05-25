@@ -275,27 +275,43 @@ Notes:
 
 ### GRAPH 4 - Z-SCORE DISTRIBUTION
 Stacked Column Charts (Histogram)
-?explain z-score?
+Z-scores is the range of differences between variables and the mean of the population.
+0 represents the mean, the units represent the number of standard deviations from the mean in each direction, and the frequency that these occur in the sample.
+
 ![zscore all](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/26e2c6e9-2396-4dd9-a8fe-bc99ae796cb5)
 
 Filter: Z-scores for females
+
+
 ![zscore female](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/991b029f-586e-4d06-ae61-2c6600ac2c38)
 
 Filter: Z-scores for males
+
+
 ![zscore male](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/0f6c5f6e-44fc-416e-a149-a1213ab38440)
 
 What + How:
-- Create a new column and calculate the Z-score for each height = (value - mean) / standard deviation
+- Create a new column and calculate the z-score for each height = (value - mean) / standard deviation
 > Z-score Adult Height = (data[Height Adult] - 167.11) / 10.16
 
 - Grouped these into intervals of 0.2 (z-scores)
-
 - I then removed any value with a z-score of > 3 and < -3
-- there were only **5** adult outliers 
+- There were only **5** adult outliers
+- You could limit this to 2.5 * standard devation from the mean
 
 Notes: 
-- for the whole study population, again there is roughly a normal distribution here,  almost 2 peaks for male and female
-- would separate these 
+- For the whole study population, again there is roughly a normal distribution here, there are almost 2 peaks for male and female
+- When filtered for gender, we can see that the mean z-score for females is less than 0, and for males is more than 0
 
 ### Graph 5 - box and whisker 
 
+---------------------------------------------------------
+## PAGE 3 
+
+![Child Height](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/37163fa7-07f4-4ac7-bc85-63259c975596)
+
+![example of filter](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/2aed51ce-0323-43dc-ac04-3b33f56af58f)
+
+![Child height female](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/0cfc5b2e-1ec2-41d9-abed-173937879c72)
+
+![child height male](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/6d10594b-1d59-436f-a311-15b726c01394)
