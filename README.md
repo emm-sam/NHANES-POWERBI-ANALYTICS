@@ -244,20 +244,34 @@ Notes:
 - There is a sharp 'line' of dots at the upper cut off point 
 - Note Power BI automatically adjusts the scale on the axes
 
-### Graph 3 - Histogram of adult height, normal distribution
+### GRAPH 3 - ADULT HEIGHT
+Stacked Column Chart with Line (Histogram with Normal Distribution)
+![Height histogram](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/41d5d184-81d9-406f-b242-a4a5e6509ce1)
+
+What and How:
 - create column to sort height into bins (increments of 5cm)
 - set the order of the height bins by creating a new query and creating a relationship between the 2
 - use measures to calculate mean and standard devation for adult height (AVERAGE()) (STDEV.P()) with FILTER function for > 16 years old
-> **Mean Height Adult = CALCULATE(AVERAGE(data[examination.BMXHT]), FILTER(data, data[RIDAGEYR] > 16))
+> **Mean Height Adult = CALCULATE(AVERAGE(data[examination.BMXHT]), FILTER(data, data[RIDAGEYR] > 16))**
 
 - create a new column with calculated normal distribution (NORM.DIST())
+- the NORM.DIST() function requires mean and standard deviation, which must be hard coded
 - plot a line and stacked column chart: 
     - x-axis height bin order
     - y-axis count of adult height
-    - line y-axis as average of adult normal distribution for height
-    - legend are height bins
+    - line y-axis as **average** of adult normal distribution for height
+    - legend is height bins
 
-becuase normal distribution is hard coded - does not change with filters
+Note:
+- [Normal Distribution](https://community.fabric.microsoft.com/t5/Desktop/Normal-Distribution/td-p/1729978)
+- We can see roughtly that the sample population height is normally distributed (as expected), however the peaks are not totally in line 
+- This may be ebcause the median is lower than the mean?? 
+- Because the mean and standard deviation for normal distribution are hard coded - it does not change with gender filters
+- Though this allows us to compare the gender distribution compared to the whole population  
+
+![height female](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/f760c42e-8771-4cf1-b8e7-4076cbb5ad92)
+
+- When filtered for the female sample, we can see that there is still a normal distribution, centered around a lower mean height than the whole population 
 
 ### Graph 4 
 SCREENSHOT
