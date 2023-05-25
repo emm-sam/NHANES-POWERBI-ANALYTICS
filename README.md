@@ -48,13 +48,14 @@ Can also **choose columns** as there were >170 of them and I only wanted 8
 
 - rename the main query to 'data'
 
-## Page 1 - demographics of sample population
-Justification: 
+------------------------------------------------------
 
-- count of gender
-- count of income
-- count of race
-- count of age groups 
+## PAGE 1 - DEMOGRAPHICS OF STUDY POPULATION
+This page is designed to give a quick overview of some key variables in the study population.
+- gender
+- income
+- race
+- age
 
 ![Page 1 whole](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/12f503c2-665c-45df-abad-27e38a844527)
 
