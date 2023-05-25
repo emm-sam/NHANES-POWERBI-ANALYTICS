@@ -233,13 +233,16 @@ Notes:
 > Put this measure on a card and overlay on scatter graph 
 
 - The correlation is 0.96, which is very strongly positive!
-- From the scatter graph I wouldn't expect it to be this high, but the overlap of the dots make it impossible to get an idea of the density here 
+- Visually from the scatter graph I wouldn't expect it to be this high, but the overlap of the dots make it impossible to get an idea of the density here 
 
 ### GRAPH 2 - HEIGHT VS WEIGHT ONLY HEALTHY/OVERWEIGH INDIVIDUALS
 ![Height vs weight BMI filter](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/7d44b1cc-28a5-49eb-8c40-b39cf5f7e5f7)
 
 - Out of interest I removed those from the sample with a BMI of > 30 and < 18
-- Correlation coefficient improves .. suspiciously high 
+- Note these are not true statistical outliers
+- Correlation coefficient improves to 0.98
+- There is a sharp 'line' of dots at the upper cut off point 
+- Note Power BI automatically adjusts the scale on the axes
 
 ### Graph 3 - Histogram of adult height, normal distribution
 - create column to sort height into bins (increments of 5cm)
