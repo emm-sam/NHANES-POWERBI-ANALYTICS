@@ -59,19 +59,18 @@ This page is designed to give a quick overview of some key variables in the stud
 
 ![Page 1 whole](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/12f503c2-665c-45df-abad-27e38a844527)
  
- 
- 
- 
+
 ### GRAPH 1 - COUNT OF PARTICIPANTS BY GENDER
 Stacked Bar Chart
 
 
 ![Gender graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/28a07d77-17eb-4789-a4d0-6045b79d9097)
 
-What + why:
-- basic chart showing split between both genders, roughly equal sized samples 
+What:
+- basic chart showing split between both genders  
 - created a new column Gender to convert research codes '1' and '2' to 'male' and 'female' to make easier to interpret
-- sometimes the data type in the original column will need changing e.g. to a whole number to convert it
+- [documentation](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIAGENDR)
+
 
 How:
 > Create column: **Home -> New Column**      (a window for a DAX expression appears)
@@ -82,20 +81,28 @@ How:
 
 > X-axis 'Gender' Y-axis 'Count of Gender' (drag Gender column from 'Data' into both sections)
 
-### Graph 2 - Count of participants by Racial Group
-Stacked Column Chart
+Notes:
+- sometimes the data type in the original column will need changing e.g. to a whole number to convert it
+- roughly equally sized samples
 
+### GRAPH 2 - COUNT OF PARTICIPANTS BY RACIAL GROUP
+Stacked Column Chart
 
 ![Race graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/a29625d9-fd78-49f2-a710-57b83e934be5)
 
+What:
+- convert research numeric codes into text categories as per the [documentation](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIDRETH3)
+
+How:
 - process as previous
 > DAX: **Race = SWITCH ( TRUE(), data[RIDRETH3] = 1, "Mexican American", data[RIDRETH3] = 2, "Other Hispanic", data[RIDRETH3] = 3, "Non-Hispanic White", data[RIDRETH3] = 4, "Non-Hispanic Black", data[RIDRETH3] = 6, "Non-Hispanic Asian", data[RIDRETH3] = 7, "Other Race - Including Multi-Racial", BLANK())**
 
-- link to the research details
+Notes:
 - note there is no category 5
+- the race with the highest frequency is Non-Hispanic White at 3700 participants
 
-### Graph 3 - Count of participants by Income (annual household income)
-Stacked Bar Chart with Custom Order
+### GRAPH 3 - COUNT OF PARTICIPANTS BY INCOME (annual household)
+Stacked Column Chart (with custom order)
 
 ![Income graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/07144fb1-b370-41e7-97ab-6ea9f90286b0)
 
