@@ -58,22 +58,29 @@ This page is designed to give a quick overview of some key variables in the stud
 - age
 
 ![Page 1 whole](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/12f503c2-665c-45df-abad-27e38a844527)
-
-### Graph 1 - Count of participants by Gender
+ 
+ 
+ 
+ 
+### GRAPH 1 - COUNT OF PARTICIPANTS BY GENDER
 Stacked Bar Chart
 
 
 ![Gender graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/28a07d77-17eb-4789-a4d0-6045b79d9097)
 
-- created a new column to change the research codes '1' and '2' to 'male' and 'female' to make the visualisation clearer
-- sometimes the data type in the original column will need changing e.g. to a whole number 
+What + why:
+- basic chart showing split between both genders, roughly equal sized samples 
+- created a new column Gender to convert research codes '1' and '2' to 'male' and 'female' to make easier to interpret
+- sometimes the data type in the original column will need changing e.g. to a whole number to convert it
+
+How:
 > Create column: **Home -> New Column**      (a window for a DAX expression appears)
 
 > DAX: **Gender = SWITCH ( TRUE (), data[RIAGENDR] = 1, "male", data[RIAGENDR] = 2, "female", "other")**
 
-> Make graph: **Report view -> Vizualisations -> Build Visual -> Stacked column chart**
+> Make graph: **Report view -> Vizualisations -> Build Visual -> Stacked bar chart**
 
-> X-axis 'Gender' Y-axis 'Count of Gender' (drag gender column from Data into both sections
+> X-axis 'Gender' Y-axis 'Count of Gender' (drag Gender column from 'Data' into both sections)
 
 ### Graph 2 - Count of participants by Racial Group
 Stacked Column Chart
