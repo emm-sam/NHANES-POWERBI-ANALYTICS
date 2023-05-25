@@ -149,14 +149,15 @@ What:
 
 How:
 - as previously, create a new column with custom 'bins' which are ranges to categorise the age variable
+- as age is numeric we can use a range when defining the variables 
 > DAX: **Age Bins = SWITCH ( TRUE(), data[RIDAGEYR] >= 0 && data[RIDAGEYR] < 5, "0-5", ...**
 
-- create a new table with the order of the bins as before and create a relationship between the 2 tables
+- create a new query with the order of the bins and create a relationship between the 2 queries (as before)
 - create visual 
   - X-axis - age order[age order], Y-axis - count of data[Age Bins], Legend - data[Age Bins]
 
-### Cards - Mean, Median, Interquartile Range of Ages
-- Made using measures with DAX
+### CARDS - MEAN< MEDIAN< INTERQUARTILE RANGE OF AGES
+- Made using measures with DAX 
 > Mean Age = AVERAGE(data[RIDAGEYR])
 
 > Median Age = MEDIAN(data[RIDAGEYR])
@@ -167,15 +168,15 @@ How:
 
 > IQ Range Age = data[75th Percentile Age] - data[25th Percentile Age]
 
-Comments:
+Notes:
 - Outliers could be determined by (75th Percentile + (1.5 * IQR)) and (25th Percentile - (1.5 * IQR))
-- I did a quick visual check of the histogram to see if the values were reasonable.
-- I would make a box and whisker diagram with these measures to assess the skewness/symmetry of the data.
+- I did a quick visual check of the histogram to see if the values were reasonable
+- I would make a box and whisker diagram with these measures to assess the skewness/symmetry of the data
 - From the histogram I would expect it to show a small positive skew. 
 
 
-### Making the display readable
-Some things that I changed to make the visualisation more aesthetically pleasing and easy to interpret.
+### MAKING THE DISPLAY READABLE
+These are some changes I made to make the graphs more aesthetically pleasing and easy to interpret.
 
 These can mostly be found in the 'Format your Visual' section of the 'Visualizations' pane
 
@@ -187,6 +188,9 @@ These can mostly be found in the 'Format your Visual' section of the 'Visualizat
 - Tooltips are on 
 
 ![Tooltip example](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/bd7c54f0-b122-40df-8253-d6900e05eda6)
+
+### FILTERING
+There are numerous ways to filter the data, but if you click on any variable on any chart on a page, all of the graphs show the filtered subset as a proportion of the total:
 
 ![Example of filtering](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/4144aff1-9700-4fb0-b98f-2c23b14e00c9)
 
