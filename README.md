@@ -117,6 +117,7 @@ How:
 Notes:
 - note the categories <20 and >20, I decided to order these between 15-20 and 20-25 
 - because it is text, we need to set the order of the categories manually
+- though the columns are in ascending order, the legend is not in the correct order, I couldn't find how to fix this
 
 How to set a manual order for bars: 
 - Create a new query (table) called 'Income Order' with 2 coloumns
@@ -145,7 +146,7 @@ Stacked Column Chart (Histogram)
 
 What:
 - used the variable [age in years at screening](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIDAGEYR)
-- accumulate years into appropriate intervals (5 years)
+- grouped years into appropriate intervals (5 years) and plot the frequency on the Y-axis 
 
 How:
 - as previously, create a new column with custom 'bins' which are ranges to categorise the age variable
@@ -156,7 +157,7 @@ How:
 - create visual 
   - X-axis - age order[age order], Y-axis - count of data[Age Bins], Legend - data[Age Bins]
 
-### CARDS - MEAN< MEDIAN< INTERQUARTILE RANGE OF AGES
+### CARDS - MEAN, MEDIAN, INTERQUARTILE RANGE OF AGES
 - Made using measures with DAX 
 > Mean Age = AVERAGE(data[RIDAGEYR])
 
@@ -172,13 +173,13 @@ Notes:
 - Outliers could be determined by (75th Percentile + (1.5 * IQR)) and (25th Percentile - (1.5 * IQR))
 - I did a quick visual check of the histogram to see if the values were reasonable
 - I would make a box and whisker diagram with these measures to assess the skewness/symmetry of the data
-- From the histogram I would expect it to show a small positive skew. 
+- From the histogram I would expect it to show a small positive skew
 
 
 ### MAKING THE DISPLAY READABLE
 These are some changes I made to make the graphs more aesthetically pleasing and easy to interpret.
 
-These can mostly be found in the 'Format your Visual' section of the 'Visualizations' pane
+These can mostly be found in the 'Format your Visual' section of the 'Visualizations' pane.
 
 - Tidied up the titles and axis labels (make central, simplify, include units where needed)
 - Changed the colour theme so they all match 
