@@ -92,6 +92,7 @@ Stacked Column Chart
 
 What:
 - convert research numeric codes into text categories as per the [documentation](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIDRETH3)
+- make column chart X-axis - Race Y-axis - Count of Race
 
 How:
 - process as previous
@@ -106,14 +107,18 @@ Stacked Column Chart (with custom order)
 
 ![Income graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/07144fb1-b370-41e7-97ab-6ea9f90286b0)
 
+What:
+- convert research numberic codes into income categories as per the [documentation](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#INDHHIN2)
+
+How:
 - process as previous
 > DAX: **Income = SWITCH ( TRUE(), data[INDHHIN2] = 1, "0-5", data[INDHHIN2] = 2, "5-10", data[INDHHIN2] = 3, "10-15", data[INDHHIN2] = 4, "15-20", data[INDHHIN2] = 5, "20-25", data[INDHHIN2] = 6, "25-35", data[INDHHIN2] = 7, "35-45", data[INDHHIN2] = 8, "45-55", data[INDHHIN2] = 9, "55-65", data[INDHHIN2] = 10, "65-75", data[INDHHIN2] = 12, ">20", data[INDHHIN2] = 13, "<20", data[INDHHIN2] = 14, "75-100", data[INDHHIN2] = 15, ">100", BLANK())**
 
-- these categories were decided by the research group
+Notes:
 - note the categories <20 and >20, I decided to order these between 15-20 and 20-25 
 - because it is text, we need to set the order of the categories manually
 
-To set a manual order for bars: 
+How to set a manual order for bars: 
 - Create a new query (table) called 'Income Order' with 2 coloumns
 - First coloumn called 'bins' with the same categories as the column 'Income' that we just created
 - Second column 'income order' ranging from 1-15 in the order that is needed 
@@ -121,22 +126,28 @@ To set a manual order for bars:
 
 SCREENSHOT ORDER SETTING QUERY 
 
+How to create a relationship between the 2 queries:
 > Model view -> Manage relationships -> New
 
-- Create a relationship between the 2 tables based on columns
+- based on columns
 - match income order[bins] to data[Income]
-- use Many to one cardinality
+- use 'Many to one cardinality'
 
 ![Manage relationships](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/95dc3f43-f7eb-4123-af8c-4bee3478201e)
 
-Create bar chart
-> X-axis - income order[income order], legend - data[Income], Y-axis - count of data[Income]
+Create bar chart:
+> X-axis - income order[income order], Legend - data[Income], Y-axis - count of data[Income]
 
-### Graph 4 - Count of participants by Age
-Stacked column chart (Manual histogram) 
+### GRAPH 4 - COUNT OF PARTICIPANTS BY AGE
+Stacked Column Chart (Histogram) 
 
 ![Age graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/ffe902ac-d70f-4b39-80f7-b576cce587f5)
 
+What:
+- used the variable [age in years at screening](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIDAGEYR)
+- accumulate years into appropriate intervals (5 years)
+
+How:
 - as previously, create a new column with custom 'bins' which are ranges to categorise the age variable
 > DAX: **Age Bins = SWITCH ( TRUE(), data[RIDAGEYR] >= 0 && data[RIDAGEYR] < 5, "0-5", ...**
 
