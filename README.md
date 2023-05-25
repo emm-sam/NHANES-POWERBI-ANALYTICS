@@ -56,6 +56,8 @@ Justification:
 - count of race
 - count of age groups 
 
+![Page 1 whole](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/12f503c2-665c-45df-abad-27e38a844527)
+
 ### Graph 1 - Count of participants by Gender
 Stacked Bar Chart
 SCREENSHOT OF GRAPH
