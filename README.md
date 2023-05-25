@@ -195,32 +195,45 @@ There are numerous ways to filter the data, but if you click on any variable on 
 
 ![Example of filtering](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/4144aff1-9700-4fb0-b98f-2c23b14e00c9)
 
+-------------------------------------------------------------
+## PAGE 2
+![Page 2 whole](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/28fddcf1-5627-422f-94ea-a81490acdb71)
 
-## Page 2
-SCREENSHOT
-This page is exploring the relationships between examination variables (age and height, weight and height).
+This page is exploring the relationships between variables (age and height, weight and height).
 
-I chose these because there should be a positive correlation between height and weight and height is usually normally distributed in a population. 
-
-
-### Graph 1 - Scatter Graph of height vs weight 
-SCREENSHOT
+I chose these variables to display a range of graphs and statistical methods, as I know already the likely relationships between them (positive correlation between height and weight, height is normally distributed, positive correlation between age and height in children).
 
 
-- To start I created new columns to filter out those aged under 16 (as not fully grown) and pregnant women (which would raise their weight). 
+### GRAPH 1 - HEIGHT VS WEIGHT IN ADULTS
+Scatter Graph
+
+![Height v weight](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/8e908083-3bc9-4db1-a6c8-1ac81c3aea2d)
+
+What:
+- Create new columns to filter out those aged under 16 (as not fully grown) and pregnant women (which would raise their weight).
+- Make scatter graph with height on x-axis and weight on y-axis
+
+How:
 > Create New Column DAX: **Weight Adult (not pregnant) = IF(data[RIDAGEYR] > 16 && data[RIDEXPRG] <> 1, data[examination.BMXWT], BLANK())**
 
 - This means that if the conditions are met, the column will fill in with the participant's weight, if not it will be blank.
-- I repeated this for Height Adult (not pregnant)
-
-- Make scatter graph with height on x-axis and weight on y-axis
+- I repeated this for Height Adult (not pregnant) so that all the data points are paired
 - Change to 'Don't Summarize' on the axis drop down menu
-- plot a trend line 
+- Plot a trend line 
 > **Add further analyses to your visual -> Trend line -> On** 
 
-### Correlation co-efficient for Graph 1
-- this is a really long complicated DAX formula, but Power BI has a built in quick measure to calculate it. 
-> Home -> Quick measure -> correlation coefficient 
+Notes:
+- We can see that there is a positive correlation between height and weight from the trend line (as x increases, y increases)
+- There is a lot of variation in weight, this study population are from the USA, so it makes sense that a high proportion are overwight/obese
+- There are also some underweight individuals, about 40kgs
+
+### CORRELATION COEFFICIENT
+- This is a really long complicated DAX formula, but Power BI has a built in quick measure to calculate it. 
+> Home -> Quick measure -> correlation coefficient
+> Put this measure on a card and overlay on scatter graph 
+
+- The correlation is 0.96, which is very strongly positive!
+- From the scatter graph I wouldn't expect it to be this high, but the overlap of the dots make it impossible to get an idea of the density here 
 
 ### Graph 2 - Scatter graph with rough outliers removed 
 - removed those from the sample with a BMI of > 30
