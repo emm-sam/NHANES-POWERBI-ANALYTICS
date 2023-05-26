@@ -34,17 +34,6 @@
 - Z-scores
 - Correlation coefficient
 
-### FUTURE LEARNINGS 
-- How to custom order the legend
-- Using parameters instead of filters
-- Time based graphs and trends
-- Improve running speed / efficiency, visualisations were getting slow to load at the end, probably too many calculated columns 
-- Removing null values, cleaning text data 
-- Bookmarks, drill-down
-
-### RESOURCES USED
-- list your resources 
-
 ## SET-UP
 - Downloaded datasets from kaggle, csv format
 > Home -> Get Data -> text/csv -> connect -> open -> load
@@ -319,7 +308,13 @@ Notes:
 ### Graph 5 - box and whisker 
 
 ---------------------------------------------------------
-## PAGE 3 
+## PAGE 3 - RELATIONSHIP BEWTWEEN AGE AND HEIGHT IN CHILDREN
+
+Line Graphs
+What and How:
+- Plot line graph with X-axis - age in months Y-axis mean of height
+- Filtered out the blank values (adults) on the Filter pane on the right of the page
+- Add a 'slicer' visual to the page to toggle between male and female 
 
 ![Child Height](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/37163fa7-07f4-4ac7-bc85-63259c975596)
 
@@ -328,3 +323,19 @@ Notes:
 ![Child height female](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/0cfc5b2e-1ec2-41d9-abed-173937879c72)
 
 ![child height male](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/6d10594b-1d59-436f-a311-15b726c01394)
+
+Notes: 
+- As we would expect, as age increases, height increases fairly linearly
+- We can see there is some variability around the trend line, this is likely because age is measured in months here so some of the categories will only have a sample of around 10 children
+- Note the plateau of mean height happens at an earlier age in females than in males, which would be expected
+
+### FUTURE LEARNINGS 
+- How to custom order the legend
+- Using parameters instead of filters
+- Time based graphs and trends
+- Improve running speed / efficiency, visualisations were getting slow to load at the end, probably too many calculated columns 
+- Removing null values, cleaning text data 
+- Bookmarks, drill-down
+
+### RESOURCES USED
+- list your resources 
