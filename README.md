@@ -9,7 +9,7 @@
 - There are lots of other visualisations that can be imported into Power BI, but I used the basic version
 
 ### INTRO TO NHANES
-- [kaggle dataset](https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey)
+- [Kaggle dataset](https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey)
 - NHANES is a longitudinal health and nutrition study (using surveys, examinations, blood tests, x-rays) of around 5000 residents of the USA
 - Started in 1971, data has been collected yearly since 1999
 - This is the 2013-2014 dataset
