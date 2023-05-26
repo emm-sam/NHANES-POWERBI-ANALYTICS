@@ -20,9 +20,10 @@
 ### SUMMARY OF POWER BI TECHNIQUES USED
 - Cleaning - remove columns, merge queries, filtering (in columns and on visualisations), changing data types, decimal places, removing outliers
 - Creating columns (IF, SWITCH, FILTER) to exclude data points, re-categorise (from number to text), grouping by ranges
-- Creating Measures (AVERAGE, MEDIAN, PERCENTILE.INC, STDEV.P, NORM.DIST, Correlation coefficient)
+- Creating measures (AVERAGE, MEDIAN, PERCENTILE.INC, STDEV.P, NORM.DIST, Correlation coefficient)
 - Creating relationships between tables
 - Graphs: bar charts, scatter graph, line graph, histogram (using column chart), trend lines, box and whisker?
+- Importing excel graphs into Power BI
 
 ### STATS USED
 - Mean, median, percentiles
