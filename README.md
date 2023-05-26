@@ -3,9 +3,9 @@
 ## PROJECT OVERVIEW
 - First time using Power BI
 - This project is about getting to grips with some common graphs and statistical techniques (not neccessarily the analysis that researchers would be most interested in)
-- This is a dataset from kaggle, so I'm sure it features in many projects already (as well as papers in medical literature)
+- This is a dataset from kaggle, so I'm sure it features in many data projects already (as well as the medical literature)
 - I did not look at any other interpretations of the data before doing this project, the focus was on using Power BI
-- The dataset is already clean, so data cleaning was not a focus here but is a very important topic
+- The dataset is already clean, so the data cleaning was minimal here but is a very important topic
 - There are lots of other visualisations that can be imported into Power BI, but I used the basic version
 
 ### INTRO TO NHANES
@@ -23,7 +23,8 @@
 - Creating measures (AVERAGE, MEDIAN, PERCENTILE.INC, STDEV.P, NORM.DIST, Correlation coefficient)
 - Creating relationships between tables
 - Graphs: bar charts, scatter graph, line graph, histogram (using column chart), trend lines, box and whisker?
-- Importing excel graphs into Power BI
+- Slicers
+- Importing excel graphs into Power BI?
 
 ### STATS USED
 - Mean, median, percentiles
@@ -39,15 +40,16 @@
 - Time based graphs and trends
 - Improve running speed / efficiency, visualisations were getting slow to load at the end, probably too many calculated columns 
 - Removing null values, cleaning text data 
+- Bookmarks, drill-down
 
 ### RESOURCES USED
 - list your resources 
 
 ## SET-UP
-- downloaded datasets from kaggle, csv format
-- link
+- Downloaded datasets from kaggle, csv format
 > Home -> Get Data -> text/csv -> connect -> open -> load
-- only connected 2 out of 6 to keep it working efficiently
+
+- Only connected 2 out of 6 to keep it working efficiently
 - Rename the main query to 'data'
 
 ## CLEANING - REMOVE COLUMNS
@@ -68,17 +70,12 @@ Can also **choose columns** as there were >170 of them and I only wanted 8
 
 ## PAGE 1 - DEMOGRAPHICS OF STUDY POPULATION
 This page is designed to give a quick overview of some key variables in the study population.
-- gender
-- income
-- race
-- age
 
 ![Page 1 whole](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/12f503c2-665c-45df-abad-27e38a844527)
  
 
 ### GRAPH 1 - COUNT OF PARTICIPANTS BY GENDER
 Stacked Bar Chart
-
 
 ![Gender graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/28a07d77-17eb-4789-a4d0-6045b79d9097)
 
@@ -146,9 +143,9 @@ How to set a manual order for bars:
 How to create a relationship between the 2 queries:
 > Model view -> Manage relationships -> New
 
-- based on columns
-- match income order[bins] to data[Income]
-- use 'Many to one cardinality'
+- Based on columns
+- Match income order[bins] to data[Income]
+- Use 'Many to one cardinality'
 
 ![Manage relationships](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/95dc3f43-f7eb-4123-af8c-4bee3478201e)
 
@@ -161,16 +158,16 @@ Stacked Column Chart (Histogram)
 ![Age graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/ffe902ac-d70f-4b39-80f7-b576cce587f5)
 
 What:
-- used the variable [age in years at screening](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIDAGEYR)
-- grouped years into appropriate intervals (5 years) and plot the frequency on the Y-axis 
+- Used the variable [age in years at screening](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIDAGEYR)
+- Grouped years into appropriate intervals (5 years) and plot the frequency on the Y-axis 
 
 How:
-- as previously, create a new column with custom 'bins' which are ranges to categorise the age variable
-- as age is numeric we can use a range when defining the variables 
+- As previously, create a new column with custom 'bins' which are ranges to categorise the age variable
+- As age is numeric we can use a range when defining the variables 
 > DAX: **Age Bins = SWITCH ( TRUE(), data[RIDAGEYR] >= 0 && data[RIDAGEYR] < 5, "0-5", ...**
 
-- create a new query with the order of the bins and create a relationship between the 2 queries (as before)
-- create visual 
+- Create a new query with the order of the bins and create a relationship between the 2 queries (as before)
+- Create visual 
   - X-axis - age order[age order], Y-axis - count of data[Age Bins], Legend - data[Age Bins]
 
 ### CARDS - MEAN, MEDIAN, INTERQUARTILE RANGE OF AGES
@@ -265,14 +262,14 @@ Stacked Column Chart with Line (Histogram with Normal Distribution)
 ![Height histogram](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/41d5d184-81d9-406f-b242-a4a5e6509ce1)
 
 What and How:
-- create column to sort height into bins (increments of 5cm)
-- set the order of the height bins by creating a new query and creating a relationship between the 2
-- use measures to calculate mean and standard devation for adult height (AVERAGE()) (STDEV.P()) with FILTER function for > 16 years old
+- Create column to sort height into bins (increments of 5cm)
+- Set the order of the height bins by creating a new query and creating a relationship between the 2
+- Use measures to calculate mean and standard devation for adult height (AVERAGE()) (STDEV.P()) with FILTER function for > 16 years old
 > **Mean Height Adult = CALCULATE(AVERAGE(data[examination.BMXHT]), FILTER(data, data[RIDAGEYR] > 16))**
 
-- create a new column with calculated normal distribution (NORM.DIST())
-- the NORM.DIST() function requires mean and standard deviation, which must be hard coded
-- plot a line and stacked column chart: 
+- Create a new column with calculated normal distribution (NORM.DIST())
+- The NORM.DIST() function requires mean and standard deviation, which must be hard coded
+- Plot a line and stacked column chart: 
     - x-axis height bin order
     - y-axis count of adult height
     - line y-axis as **average** of adult normal distribution for height
