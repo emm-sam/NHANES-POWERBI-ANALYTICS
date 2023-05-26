@@ -34,20 +34,20 @@
 - Z-scores
 - Correlation coefficient
 
-## SET-UP
+### SET-UP
 - Downloaded datasets from kaggle, csv format
 > Home -> Get Data -> text/csv -> connect -> open -> load
 
 - Only connected 2 out of 6 to keep it working efficiently
 - Rename the main query to 'data'
 
-## CLEANING - REMOVE COLUMNS
+### CLEANING - REMOVE COLUMNS
 - Open 'Power Query Editor'
 > Home -> transform data -> remove columns -> close and apply
 
 Can also **choose columns** as there were >170 of them and I only wanted 8
 
-## MERGE TABLES
+### MERGE TABLES
 - Power BI automatically picked up a relationship between the 2 tables with the column SEQN
 - For the analysis I decided it was easier to merge the 2
 > Home -> transform data -> Home -> Combine -> Merge queries (Full Outer) -> expand -> Close and apply
