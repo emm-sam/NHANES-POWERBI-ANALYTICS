@@ -125,7 +125,7 @@ How to set a manual order for bars:
 - Second column 'income order' ranging from 1-15 in the order that is needed 
 > Home -> Transform Data -> Enter Data -> close and apply
 
-SCREENSHOT ORDER SETTING QUERY 
+![Income Order](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/8283bc32-ad3a-47aa-9b2f-2e4d5b63c423) 
 
 How to create a relationship between the 2 queries:
 > Model view -> Manage relationships -> New
