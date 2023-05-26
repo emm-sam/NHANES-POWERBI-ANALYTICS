@@ -6,54 +6,62 @@
 - This is a dataset from kaggle, so I'm sure it features in many projects already (as well as papers in medical literature)
 - I did not look at any other interpretations of the data before doing this project, the focus was on using Power BI
 - The dataset is already clean, so data cleaning was not a focus here but is a very important topic
+- There are lots of other visualisations that can be imported into Power BI, but I used the basic version
 
-### SUMMARY OF TECHNIQUES USED
+### INTRO TO NHANES
+- [kaggle dataset](https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey)
+- NHANES is a longitudinal health and nutrition study (using surveys, examinations, blood tests, x-rays) of around 5000 residents of the USA
+- Started in 1971, data has been collected yearly since 1999
+- This is the 2013-2014 dataset
+- The aim is to monitor trends in the population, identify risk factors for disease, extrapolate incidence and prevalence of risk factors/diseases to the rest of the USA
+- Therefore there was effort made to make it representative of the population
+- More information can be found [here](https://wwwn.cdc.gov/nchs/nhanes/continuousnhanes/overview.aspx?BeginYear=2013)
+
+### SUMMARY OF POWER BI TECHNIQUES USED
 - Cleaning - remove columns, merge queries, filtering (in columns and on visualisations), changing data types, decimal places, removing outliers
 - Creating columns (IF, SWITCH, FILTER) to exclude data points, re-categorise (from number to text), grouping by ranges
 - Creating Measures (AVERAGE, MEDIAN, PERCENTILE.INC, STDEV.P, NORM.DIST, Correlation coefficient)
 - Creating relationships between tables
-- Graphs: bar charts, scatter graph, line graph, histogram (using column chart), trend lines
+- Graphs: bar charts, scatter graph, line graph, histogram (using column chart), trend lines, box and whisker?
 
-### About NHANES II
-- [kaggle dataset](https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey)
-- inclusion, exclusion criteria
-- remember to eplain the data columns
+### STATS USED
+- Mean, median, percentiles
+- Standard deviation
+- Normal distribution
+- Symmetry / skew, interquartile range
+- Z-scores
+- Correlation coefficient
 
-### Caveats
-- widely used dataset, available on kaggle
-- already clean 
-- alalytics projects already exist for this dataset but I did not look at these beforehand
-- I did use educational material provided by others on youtube, medium, blogs
-- no access to additional graphs 
+### FUTURE LEARNINGS 
+- How to custom order the legend
+- Using parameters instead of filters
+- Time based graphs and trends
+- Improve running speed / efficiency, visualisations were getting slow to load at the end, probably too many calculated columns 
+- Removing null values, cleaning text data 
 
-### Learnings and focus for future 
-- how to custom order a legend
-- using parameters instead of filters
-- time based graphs and trends
-- running speed / efficiency 
-
-### credits to others
+### RESOURCES USED
 - list your resources 
 
-## Set-up 
+## SET-UP
 - downloaded datasets from kaggle, csv format
 - link
 > Home -> Get Data -> text/csv -> connect -> open -> load
-- only connected 2 out of 7? to keep it working efficiently 
+- only connected 2 out of 6 to keep it working efficiently
+- Rename the main query to 'data'
 
-## Cleaning and organising columns
-- Open Power Query Editor
+## CLEANING - REMOVE COLUMNS
+- Open 'Power Query Editor'
 > Home -> transform data -> remove columns -> close and apply
 
 Can also **choose columns** as there were >170 of them and I only wanted 8
-- Merge tables
+
+## MERGE TABLES
 - Power BI automatically picked up a relationship between the 2 tables with the column SEQN
 - For the analysis I decided it was easier to merge the 2
 > Home -> transform data -> Home -> Combine -> Merge queries (Full Outer) -> expand -> Close and apply
 
-- could be any merge option as both datasets have the same number of rows and are complete
+- (Could be any merge option as both datasets have the same number of rows and are complete)
 
-- rename the main query to 'data'
 
 ------------------------------------------------------
 
