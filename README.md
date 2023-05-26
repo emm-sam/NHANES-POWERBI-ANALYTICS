@@ -1,14 +1,21 @@
 # NHANES-POWERBI-ANALYTICS
 
-## Project Overview
+## PROJECT OVERVIEW
+- First time using Power BI
+- This project is about getting to grips with some common graphs and statistical techniques (not neccessarily the analysis that researchers would be most interested in)
+- This is a dataset from kaggle, so I'm sure it features in many projects already (as well as papers in medical literature)
+- I did not look at any other interpretations of the data before doing this project, the focus was on using Power BI
+- The dataset is already clean, so data cleaning was not a focus here but is a very important topic
 
-- this project is about getting to grips with the most commonly used graphs and statistical techniques
-- not neccessarily what researchers would be most interested in
-- start using DAX, methods, relationships, visual features
-- interpretation of results
+### SUMMARY OF TECHNIQUES USED
+- Cleaning - remove columns, merge queries, filtering (in columns and on visualisations), changing data types, decimal places, removing outliers
+- Creating columns (IF, SWITCH, FILTER) to exclude data points, re-categorise (from number to text), grouping by ranges
+- Creating Measures (AVERAGE, MEDIAN, PERCENTILE.INC, STDEV.P, NORM.DIST, Correlation coefficient)
+- Creating relationships between tables
+- Graphs: bar charts, scatter graph, line graph, histogram (using column chart), trend lines
 
 ### About NHANES II
-- put a link to the dataset
+- [kaggle dataset](https://www.kaggle.com/datasets/cdc/national-health-and-nutrition-examination-survey)
 - inclusion, exclusion criteria
 - remember to eplain the data columns
 
