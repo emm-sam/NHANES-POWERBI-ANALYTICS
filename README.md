@@ -69,9 +69,9 @@ Stacked Bar Chart
 ![Gender graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/28a07d77-17eb-4789-a4d0-6045b79d9097)
 
 What:
-- basic chart showing split between both genders  
-- created a new column Gender to convert research codes '1' and '2' to 'male' and 'female' to make easier to interpret
-- [documentation](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIAGENDR)
+- Basic chart showing split between both genders  
+- Created a new column Gender to convert research codes '1' and '2' to 'male' and 'female' to make easier to interpret
+- [Documentation](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIAGENDR)
 
 
 How:
@@ -84,8 +84,8 @@ How:
 > X-axis 'Gender' Y-axis 'Count of Gender' (drag Gender column from 'Data' into both sections)
 
 Notes:
-- sometimes the data type in the original column will need changing e.g. to a whole number to convert it
-- roughly equally sized samples
+- Sometimes the data type in the original column will need changing e.g. to a whole number to convert it
+- Roughly equally sized samples
 
 ### GRAPH 2 - COUNT OF PARTICIPANTS BY RACIAL GROUP
 Stacked Column Chart
@@ -93,16 +93,16 @@ Stacked Column Chart
 ![Race graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/a29625d9-fd78-49f2-a710-57b83e934be5)
 
 What:
-- convert research numeric codes into text categories as per the [documentation](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIDRETH3)
-- make column chart X-axis - Race Y-axis - Count of Race
+- Convert research numeric codes into text categories as per the [documentation](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#RIDRETH3)
+- Make column chart X-axis - Race Y-axis - Count of Race
 
 How:
-- process as previous
+- Process as previous
 > DAX: **Race = SWITCH ( TRUE(), data[RIDRETH3] = 1, "Mexican American", data[RIDRETH3] = 2, "Other Hispanic", data[RIDRETH3] = 3, "Non-Hispanic White", data[RIDRETH3] = 4, "Non-Hispanic Black", data[RIDRETH3] = 6, "Non-Hispanic Asian", data[RIDRETH3] = 7, "Other Race - Including Multi-Racial", BLANK())**
 
 Notes:
-- note there is no category 5
-- the race with the highest frequency is Non-Hispanic White at 3700 participants
+- Note there is no category 5
+- The race with the highest frequency is Non-Hispanic White at 3700 participants
 
 ### GRAPH 3 - COUNT OF PARTICIPANTS BY INCOME (annual household)
 Stacked Column Chart (with custom order)
@@ -110,16 +110,16 @@ Stacked Column Chart (with custom order)
 ![Income graph](https://github.com/emm-sam/NHANES-POWERBI-ANALYTICS/assets/100299675/07144fb1-b370-41e7-97ab-6ea9f90286b0)
 
 What:
-- convert research numberic codes into income categories as per the [documentation](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#INDHHIN2)
+- Convert research numberic codes into income categories as per the [documentation](https://wwwn.cdc.gov/nchs/nhanes/2013-2014/demo_h.htm#INDHHIN2)
 
 How:
-- process as previous
+- Process as previous
 > DAX: **Income = SWITCH ( TRUE(), data[INDHHIN2] = 1, "0-5", data[INDHHIN2] = 2, "5-10", data[INDHHIN2] = 3, "10-15", data[INDHHIN2] = 4, "15-20", data[INDHHIN2] = 5, "20-25", data[INDHHIN2] = 6, "25-35", data[INDHHIN2] = 7, "35-45", data[INDHHIN2] = 8, "45-55", data[INDHHIN2] = 9, "55-65", data[INDHHIN2] = 10, "65-75", data[INDHHIN2] = 12, ">20", data[INDHHIN2] = 13, "<20", data[INDHHIN2] = 14, "75-100", data[INDHHIN2] = 15, ">100", BLANK())**
 
 Notes:
 - Note the categories <20 and >20, I decided to order these between 15-20 and 20-25 
-- because it is text, we need to set the order of the categories manually
-- though the columns are in ascending order, the legend is not in the correct order, I couldn't find how to fix this
+- Because it is text, we need to set the order of the categories manually
+- Though the columns are in ascending order, the legend is not in the correct order, I couldn't find how to fix this
 
 How to set a manual order for bars: 
 - Create a new query (table) called 'Income Order' with 2 coloumns
