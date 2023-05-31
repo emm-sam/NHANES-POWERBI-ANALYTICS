@@ -22,9 +22,9 @@
 - Creating columns (IF, SWITCH, FILTER) to exclude data points, re-categorise (from number to text), grouping by ranges
 - Creating measures (AVERAGE, MEDIAN, PERCENTILE.INC, STDEV.P, NORM.DIST, Correlation coefficient)
 - Creating relationships between tables
-- Graphs: bar charts, scatter graph, line graph, histogram (using column chart), trend lines, box and whisker?
+- Graphs: bar charts, scatter graph, line graph, histogram (using column chart), trend lines
 - Slicers
-- Importing excel graphs into Power BI?
+- TODO: Importing excel graphs into Power BI
 
 ### STATS USED
 - Mean, median, percentiles
