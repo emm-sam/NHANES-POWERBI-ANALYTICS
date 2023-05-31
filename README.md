@@ -1,4 +1,4 @@
-# NHANES-POWERBI-ANALYTICS
+# NHANES-PowerBI-Analytics-Project
 
 ## PROJECT OVERVIEW
 - First time using Power BI
